@@ -1,5 +1,9 @@
 {
   "urls": [
-    "http://www.spies.dk/bestil-pakkerejse?QueryDepID=12678&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160701&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1"
+    "http://www.spies.dk/bestil-pakkerejse?QueryDepID=12678&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160701&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1",
+    "http://www.spies.dk/bestil-pakkerejse?QueryDepID=12676&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160702&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1",
+    "http://www.spies.dk/bestil-pakkerejse?QueryDepID=12675&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160702&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1",
+    "http://www.spies.dk/bestil-pakkerejse?QueryDepID=37057&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160704&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1",
+    "http://www.spies.dk/bestil-pakkerejse?QueryDepID=12677&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160915&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1"
   ]
 }

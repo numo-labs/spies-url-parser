@@ -1,0 +1,36 @@
+{
+  "name": "spies-url-parser",
+  "version": "1.0.0",
+  "description": "Helper library to query the tag system",
+  "main": "index.js",
+  "scripts": {
+    "nocov": "mocha --recursive",
+    "test": "semistandard && npm run coverage",
+    "coverage": "node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test/**/*.js --report lcov -- -R spec",
+    "lint": "semistandard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/numo-labs/spies-url-parser.git"
+  },
+  "author": "Pascal & Pals",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/numo-labs/spies-url-parser/issues"
+  },
+  "homepage": "https://github.com/numo-labs/spies-url-parser",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.3",
+    "mocha": "^2.4.5",
+    "semistandard": "^7.0.5"
+  },
+  "semistandard": {
+    "globals": [
+      "describe",
+      "it",
+      "afterEach"
+    ]
+  }
+}

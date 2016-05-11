@@ -11,11 +11,32 @@ of the options people selected when they performed their holiday search.
 
 When a search is performed on Spies.dk the options selected are stored as query parameters in the url.
 
+### Things we need to *extract* from the URL params
+
++ Departure Airport
++ Destination
++ Duration of Holiday
++ Departure date
++ Adults
++ Children
+
 ## How?
+
+### Usage
+
+#### Install from npm
+
+#### 
+
+### *Example*
 
 When a user selects the following options:
 + From: København
-+ Where:
++ Where: Anywhere (*destination*)
++ How long: 1 week
++ Departure date: 01-07-2016
++ Adults: 2
++ Children: 2
 
 The url is:
 ```
@@ -44,46 +65,6 @@ Which we parse as:
 }
 ```
 
-### Parse the URl
-
-```js
-function parse (url) {
-  var q = url.split('?')[1];
-  var params = q.split('&');
-  return params.reduce(function (obj, item) {
-    var k = item.split('=')[0];
-    var v = item.split('=')[1];
-    obj[k] = v;
-    return obj;
-  }, {});
-}
-
-module.exports = parse;
-
-var urlstr = 'http://www.spies.dk/bestil-pakkerejse?QueryDepID=12678&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160701&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1';
-var q = parse(urlstr);
-console.log(q);
-```
-
-Result:
-
-```js
-{ QueryDepID: '12678',
-  QueryCtryID: '-1',
-  QueryAreaID: '0',
-  QueryResID: '-1',
-  QueryDepDate: '20160701',
-  QueryDur: '8',
-  CategoryId: '2',
-  QueryRoomAges: '|42,42,9,10',
-  QueryUnits: '1' }
-```
-
-### Things we need to *extract*
-
-+ Departure Airport
-+ Destination
-+ Duration of Holiday
-+ Departure date
-+ Adults
-+ Children
+> Note: at present we are not parsing the destination.
+> When the person arrives on "iSearch" we want to widen their search to "All Destinations".
+> This could change in the future.

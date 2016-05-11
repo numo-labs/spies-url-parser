@@ -43,6 +43,16 @@ var parsed = spies_url_parser(url); // e.g: document.referrer (if user came from
 console.log(parsed); // see below for sample output
 ```
 
+#### In Browser JS (without browserify/webpack)
+
+```js
+<script src="https://cdn.rawgit.com/numo-labs/spies-url-parser/master/index.js"></script>
+<script>
+var parsed = spies_url_parser(document.referrer); // e.g: document.referrer
+console.log(parsed); // see below for sample output
+</script>
+```
+
 ### *Example 1 - Destination: Anywhere*
 
 When a user selects the following options:

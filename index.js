@@ -91,7 +91,7 @@ function departure_airport_name (id) {
   return airport_name;
 }
 
-function extract_url_query_params (url) {
+function spies_url_parser (url) {
   if (!url || url.indexOf('QueryDepID') === -1 || url.indexOf('QueryRoomAges') === -1) {
     return {};
   }
@@ -108,7 +108,7 @@ function extract_url_query_params (url) {
 
 /* istanbul ignore else */
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = extract_url_query_params;
+  module.exports = spies_url_parser;
   module.exports.parse_url = parse_url;
   module.exports.make_birthday = make_birthday;
   module.exports.parse_passenger_mix = parse_passenger_mix;

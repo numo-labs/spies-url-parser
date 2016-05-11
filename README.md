@@ -26,7 +26,17 @@ When a search is performed on Spies.dk the options selected are stored as query 
 
 #### Install from npm
 
-#### 
+```sh
+npm install spies-url-parser --save
+```
+
+#### In Your *React* (*or Browserified*) Code
+
+```js
+var spies_url_parser = require('spies-url-parser');
+var parsed = spies_url_parser(url);
+console.log(parsed); // see below for sample output
+```
 
 ### *Example*
 

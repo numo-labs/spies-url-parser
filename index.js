@@ -92,6 +92,9 @@ function departure_airport_name (id) {
 }
 
 function format_object (url) {
+  if (!url || url.indexOf('QueryDepID=') === -1) {
+    return {};
+  }
   var query = parse_url(url);
   // console.log(query);
   return {

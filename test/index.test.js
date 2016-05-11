@@ -98,3 +98,12 @@ describe('Complete parsed object', function () {
     done();
   });
 });
+
+describe('Degrade Gracefully if the referrer URL is not from Spies.dk', function () {
+  it('Dont attempt to parse a url that does not contain the params', function (done) {
+    var result = parse('example.com');
+    // console.log(JSON.stringify(result, null, 2));
+    assert.deepEqual(result, {});
+    done();
+  });
+});

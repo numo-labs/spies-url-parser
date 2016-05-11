@@ -13,5 +13,20 @@
     "12675": "Aalborg - AAL",
     "37057": "Odense - ODE",
     "12677": "Rønne - RNN"
+  },
+  "full": {
+    "departure_airport": "København - CPH",
+    "pax_mix": {
+      "passengers": [
+        "1974-4-11",
+        "1974-4-11",
+        "2007-4-11",
+        "2006-4-11"
+      ],
+      "adults": 2,
+      "children": 2
+    },
+    "duration_weeks": 1,
+    "departure_date": "2016-07-01"
   }
 }

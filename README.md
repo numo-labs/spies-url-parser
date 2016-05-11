@@ -18,43 +18,10 @@ The url is:
 `http://www.spies.dk/bestil-pakkerejse?QueryDepID=12678&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160701&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1`
 
 
-### Using Node:
-
-```js
-var url = require('url');
-var qs = require('querystring');
-
-function parse (urlstr) {
-  var parts = url.parse(urlstr);
-  console.log(JSON.stringify(parts, null, 2));
-  var query = qs.parse(parts.query);
-  console.log(query);
-  return parts;
-}
-
-var urlstr = 'http://www.spies.dk/bestil-pakkerejse?QueryDepID=12678&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160701&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1';
-
-parse(urlstr);
-```
-
-Result:
-
-```js
-{ QueryDepID: '12678',
-  QueryCtryID: '-1',
-  QueryAreaID: '0',
-  QueryResID: '-1',
-  QueryDepDate: '20160701',
-  QueryDur: '8',
-  CategoryId: '2',
-  QueryRoomAges: '|42,42,9,10',
-  QueryUnits: '1' }
-```
-
 ### Browser Version
 
 ```js
-function parse(url) {
+function parse (url) {
   var q = url.split('?')[1];
   var params = q.split('&');
   return params.reduce(function (obj, item) {
@@ -85,3 +52,11 @@ Same result:
   QueryRoomAges: '|42,42,9,10',
   QueryUnits: '1' }
 ```
+
+### Things we need to *extract*
+
++ Departure Airport
++ Duration of Holiday
++ Departure date
++ Adults
++ Children

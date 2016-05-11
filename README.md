@@ -1,7 +1,10 @@
 # spies url parser
 
 ## Why?
+<img style="float: right;" src="https://cloud.githubusercontent.com/assets/194400/15152068/db61b016-16cb-11e6-8811-4607baa2bf93.png">
 
+Urls on [Spies.dk](http://www.spies.dk/) contain the query parameters
+of the options people selected when they performed their holiday search.
 
 
 ## What?
@@ -12,13 +15,11 @@
 
 When a user selects the following options:
 
-![spies-search-fields](https://cloud.githubusercontent.com/assets/194400/15152068/db61b016-16cb-11e6-8811-4607baa2bf93.png)
-
 The url is:
 `http://www.spies.dk/bestil-pakkerejse?QueryDepID=12678&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160701&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1`
 
 
-### Browser Version
+### Parse the URl
 
 ```js
 function parse (url) {
@@ -39,7 +40,7 @@ var q = parse(urlstr);
 console.log(q);
 ```
 
-Same result:
+Result:
 
 ```js
 { QueryDepID: '12678',

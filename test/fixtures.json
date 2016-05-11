@@ -6,5 +6,12 @@
     "http://www.spies.dk/bestil-pakkerejse?QueryDepID=37057&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160704&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1",
     "http://www.spies.dk/bestil-pakkerejse?QueryDepID=12677&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160915&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1",
     "http://www.spies.dk/bestil-pakkerejse?QueryDepID=12677&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160915&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,42,17,13,9&QueryUnits=1#h1=prilo"
-  ]
+  ],
+  "airports": {
+    "12678": "København - CPH",
+    "126786": "Billund - BLL",
+    "12675": "Aalborg - AAL",
+    "37057": "Odense - ODE",
+    "12677": "Rønne - RNN"
+  }
 }

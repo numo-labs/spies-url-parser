@@ -1,4 +1,9 @@
-function parse (urlstr) {
+/**
+ * parse a spies.dk url to extract params
+ * @returns {Object} obj containing the parsed query parameters
+ see: test/fixtures.json for examples
+ */
+function parse_url (urlstr) {
   var q = urlstr.split('?')[1];
   var params = q.split('&');
   return params.reduce(function (obj, item) {
@@ -49,10 +54,37 @@ function parse_passenger_mix (people) {
   return mix;
 }
 
-module.exports = parse;
+function departure_airport_name (id) {
+  var airport_name = '';
+  switch (id) {
+    case 12678:
+      airport_name = 'København - CPH';
+      break;
+    case 126786:
+      airport_name = 'Billund - BLL';
+      break;
+    case 12675:
+      airport_name = 'Aalborg - AAL';
+      break;
+    case 37057:
+      airport_name = 'Odense - ODE';
+      break;
+    case 12677:
+      airport_name = 'Rønne - RNN';
+      break;
+    default: // default to Copenhagen
+      airport_name = 'København - CPH';
+      break;
+  }
+  return airport_name;
+}
+
+function format_object (query) {
+
+}
+
+module.exports = format_object;
+module.exports.parse_url = parse_url;
 module.exports.make_birthday = make_birthday;
 module.exports.parse_passenger_mix = parse_passenger_mix;
-
-var urlstr = 'http://www.spies.dk/bestil-pakkerejse?QueryDepID=12678&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160701&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1';
-var q = parse(urlstr);
-console.log(q);
+module.exports.departure_airport_name = departure_airport_name;

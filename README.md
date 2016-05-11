@@ -43,7 +43,7 @@ var parsed = spies_url_parser(url); // e.g: document.referrer (if user came from
 console.log(parsed); // see below for sample output
 ```
 
-### *Example*
+### *Example 1 - Destination: Anywhere*
 
 When a user selects the following options:
 + From: København
@@ -80,6 +80,32 @@ Which we parse as:
 }
 ```
 
-> Note: at present we are not parsing the destination.
-> When the person arrives on "iSearch" we want to widen their search to "All Destinations".
-> This could change in the future.
+### Example 2 - Destination Selected: Spain > Canary Islands
+
+For the following: query in the Spies UI:
+
+![spies-going-to-canaria](https://cloud.githubusercontent.com/assets/194400/15190686/3568443e-17a9-11e6-899d-3bba3410ba22.png)
+
+the URL is:
+http://www.spies.dk/bestil-pakkerejse?QueryDepID=12676&QueryCtryID=4826&QueryAreaID=8775&QueryResID=0&QueryDepDate=20160921&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,7,3&QueryUnits=1
+
+and parsed parameters are:
+
+```js
+{
+  "departure_airport": "Billund - BLL",
+  "pax_mix": {
+    "passengers": [
+      "1974-4-11",
+      "1974-4-11",
+      "2009-4-11",
+      "2013-4-11"
+    ],
+    "adults": 2,
+    "children": 2
+  },
+  "duration_days": "8",
+  "departure_date": "2016-09-21",
+  "destination": "4826,8775"
+}
+```

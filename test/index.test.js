@@ -1,8 +1,10 @@
 var assert = require('assert');
-var urls = require('./fixtures.json').urls;
-var airports = require('./fixtures.json').airports;
-var full_obj = require('./fixtures.json').full;
+var fixtures = require('./fixtures.json');
+// var urls = require('./fixtures.json').urls;
+// var airports = require('./fixtures.json').airports;
+// var all_destinations = require('./fixtures.json').all_destinations;
 // console.log(urls);
+
 var parse = require('../');
 
 describe('make_birthday', function () {
@@ -31,9 +33,10 @@ describe('Parse departure_airport_name from int to human-readable', function () 
   });
 
   it('Check the correct airport is returned for each code', function (done) {
-    Object.keys(airports).forEach(function (k) {
-      var expected = airports[k];
+    Object.keys(fixtures.airports).forEach(function (k) {
+      var expected = fixtures.airports[k];
       var airport_name = parse.departure_airport_name(parseInt(k, 10));
+      // console.log(expected, airport_name);
       assert.equal(expected, airport_name);
     });
     done();
@@ -41,7 +44,7 @@ describe('Parse departure_airport_name from int to human-readable', function () 
 
   it('Returns default København - CPH', function (done) {
     var expected = 'København - CPH';
-    var airport_name = parse.departure_airport_name();
+    var airport_name = parse.departure_airport_name(); // no airport code
     assert.equal(expected, airport_name);
     done();
   });
@@ -49,15 +52,15 @@ describe('Parse departure_airport_name from int to human-readable', function () 
 
 describe('Parse Passenger Mix from QueryRoomAges URL Query Parameter', function () {
   it('gets passenger mix (birthdays) from QueryRoomAges', function (done) {
-    var query = parse.parse_url(urls[0]);
+    var query = parse.parse_url(fixtures.urls[0]);
     var pax_mix = parse.parse_passenger_mix(query.QueryRoomAges);
-    console.log(pax_mix);
+    // console.log(pax_mix);
     assert.equal(pax_mix.adults, 2);
     done();
   });
 
   it('Parses edge case unusual value: &QueryUnits=1#h1=prilo ...', function (done) {
-    var query = parse.parse_url(urls[5]);
+    var query = parse.parse_url(fixtures.urls[5]);
     var pax_mix = parse.parse_passenger_mix(query.QueryRoomAges);
     assert.equal(pax_mix.children, 3);
     done();
@@ -66,13 +69,13 @@ describe('Parse Passenger Mix from QueryRoomAges URL Query Parameter', function 
 
 describe('Parses the Query string of a Spies.dk url', function () {
   it('Parse departure date', function (done) {
-    var q = parse.parse_url(urls[0]);
+    var q = parse.parse_url(fixtures.urls[0]);
     assert(q.QueryDepDate = '20160701');
     done();
   });
 
   it('Parse departure date', function (done) {
-    var q = parse.parse_url(urls[0]);
+    var q = parse.parse_url(fixtures.urls[0]);
     var date = parse.parse_date_string(q.QueryDepDate);
     // console.log(date);
     assert.equal(date, '2016-07-01');
@@ -82,9 +85,16 @@ describe('Parses the Query string of a Spies.dk url', function () {
 
 describe('Complete parsed object', function () {
   it('parsed object ready for setting options in React UI', function (done) {
-    var result = parse(urls[0]);
-    console.log(JSON.stringify(result, null, 2));
-    assert.deepEqual(result, full_obj);
+    var result = parse(fixtures.urls[0]);
+    // console.log(JSON.stringify(result, null, 2));
+    assert.deepEqual(result, fixtures.all_destinations);
+    done();
+  });
+
+  it('parsed object ready for setting options in React UI', function (done) {
+    var result = parse(fixtures.urls[6]);
+    // console.log(JSON.stringify(result, null, 2));
+    assert.deepEqual(result, fixtures.grand_canaria);
     done();
   });
 });

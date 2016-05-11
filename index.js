@@ -71,7 +71,7 @@ function departure_airport_name (id) {
     case 12678:
       airport_name = 'København - CPH';
       break;
-    case 126786:
+    case 12676:
       airport_name = 'Billund - BLL';
       break;
     case 12675:
@@ -87,16 +87,19 @@ function departure_airport_name (id) {
       airport_name = 'København - CPH';
       break;
   }
+  // console.log(typeof id, id, airport_name);
   return airport_name;
 }
 
 function format_object (url) {
   var query = parse_url(url);
+  // console.log(query);
   return {
-    departure_airport: departure_airport_name(query.QueryDepID),
+    departure_airport: departure_airport_name(parseInt(query.QueryDepID, 10)),
     pax_mix: parse_passenger_mix(query.QueryRoomAges),
-    duration_weeks: Math.floor(query.QueryDur / 7),
-    departure_date: parse_date_string(query.QueryDepDate)
+    duration_days: query.QueryDur,
+    departure_date: parse_date_string(query.QueryDepDate),
+    destination: query.QueryCtryID + ',' + query.QueryAreaID
   };
 }
 
@@ -108,4 +111,5 @@ module.exports.parse_date_string = parse_date_string;
 module.exports.departure_airport_name = departure_airport_name;
 
 // var url = 'http://www.spies.dk/bestil-pakkerejse?QueryDepID=12678&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160701&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1';
+// // var url = 'http://www.spies.dk/bestil-pakkerejse?QueryDepID=12676&QueryCtryID=4826&QueryAreaID=8775&QueryResID=0&QueryDepDate=20160921&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,7,3&QueryUnits=1';
 // console.log(JSON.stringify(format_object(url), null, 2));

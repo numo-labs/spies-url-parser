@@ -5,16 +5,17 @@
     "http://www.spies.dk/bestil-pakkerejse?QueryDepID=12675&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160702&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1",
     "http://www.spies.dk/bestil-pakkerejse?QueryDepID=37057&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160704&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1",
     "http://www.spies.dk/bestil-pakkerejse?QueryDepID=12677&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160915&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1",
-    "http://www.spies.dk/bestil-pakkerejse?QueryDepID=12677&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160915&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,42,17,13,9&QueryUnits=1#h1=prilo"
+    "http://www.spies.dk/bestil-pakkerejse?QueryDepID=12677&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160915&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,42,17,13,9&QueryUnits=1#h1=prilo",
+    "http://www.spies.dk/bestil-pakkerejse?QueryDepID=12676&QueryCtryID=4826&QueryAreaID=8775&QueryResID=0&QueryDepDate=20160921&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,7,3&QueryUnits=1"
   ],
   "airports": {
     "12678": "København - CPH",
-    "126786": "Billund - BLL",
+    "12676": "Billund - BLL",
     "12675": "Aalborg - AAL",
     "37057": "Odense - ODE",
     "12677": "Rønne - RNN"
   },
-  "full": {
+  "all_destinations": {
     "departure_airport": "København - CPH",
     "pax_mix": {
       "passengers": [
@@ -26,7 +27,24 @@
       "adults": 2,
       "children": 2
     },
-    "duration_weeks": 1,
-    "departure_date": "2016-07-01"
+    "duration_days": "8",
+    "departure_date": "2016-07-01",
+    "destination": "-1,0"
+  },
+  "grand_canaria": {
+    "departure_airport": "Billund - BLL",
+    "pax_mix": {
+      "passengers": [
+        "1974-4-11",
+        "1974-4-11",
+        "2009-4-11",
+        "2013-4-11"
+      ],
+      "adults": 2,
+      "children": 2
+    },
+    "duration_days": "8",
+    "departure_date": "2016-09-21",
+    "destination": "4826,8775"
   }
 }

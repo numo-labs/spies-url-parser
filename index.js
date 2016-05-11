@@ -91,8 +91,8 @@ function departure_airport_name (id) {
   return airport_name;
 }
 
-function format_object (url) {
-  if (!url || url.indexOf('QueryDepID=') === -1) {
+function extract_url_query_params (url) {
+  if (!url || url.indexOf('QueryDepID') === -1 || url.indexOf('QueryRoomAges') === -1) {
     return {};
   }
   var query = parse_url(url);
@@ -106,13 +106,15 @@ function format_object (url) {
   };
 }
 
-module.exports = format_object;
-module.exports.parse_url = parse_url;
-module.exports.make_birthday = make_birthday;
-module.exports.parse_passenger_mix = parse_passenger_mix;
-module.exports.parse_date_string = parse_date_string;
-module.exports.departure_airport_name = departure_airport_name;
-
+/* istanbul ignore else */
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = extract_url_query_params;
+  module.exports.parse_url = parse_url;
+  module.exports.make_birthday = make_birthday;
+  module.exports.parse_passenger_mix = parse_passenger_mix;
+  module.exports.parse_date_string = parse_date_string;
+  module.exports.departure_airport_name = departure_airport_name;
+} // need this to use the code in the browser without browserify/webpack
 // var url = 'http://www.spies.dk/bestil-pakkerejse?QueryDepID=12678&QueryCtryID=-1&QueryAreaID=0&QueryResID=-1&QueryDepDate=20160701&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,9,10&QueryUnits=1';
 // // var url = 'http://www.spies.dk/bestil-pakkerejse?QueryDepID=12676&QueryCtryID=4826&QueryAreaID=8775&QueryResID=0&QueryDepDate=20160921&QueryDur=8&CategoryId=2&QueryRoomAges=|42,42,7,3&QueryUnits=1';
 // console.log(JSON.stringify(format_object(url), null, 2));

@@ -1,5 +1,10 @@
 # spies url parser
 
+[![Codeship](https://img.shields.io/codeship/635119a0-f9c2-0133-c9a4-3e06b6583c43/master.svg?maxAge=2592000)](https://codeship.com/projects/151333)
+[![codecov](https://codecov.io/gh/numo-labs/spies-url-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/numo-labs/spies-url-parser)
+[![Dependency Status](https://david-dm.org/numo-labs/spies-url-parser.svg)](https://david-dm.org/numo-labs/spies-url-parser)
+[![devDependency Status](https://david-dm.org/numo-labs/spies-url-parser/dev-status.svg)](https://david-dm.org/numo-labs/spies-url-parser#info=devDependencies)
+
 ## Why?
 <img style="float: right;" src="https://cloud.githubusercontent.com/assets/194400/15152068/db61b016-16cb-11e6-8811-4607baa2bf93.png">
 
@@ -34,7 +39,7 @@ npm install spies-url-parser --save
 
 ```js
 var spies_url_parser = require('spies-url-parser');
-var parsed = spies_url_parser(url);
+var parsed = spies_url_parser(url); // e.g: document.referrer (if user came from Spies)
 console.log(parsed); // see below for sample output
 ```
 

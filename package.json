@@ -7,7 +7,9 @@
     "nocov": "mocha --recursive",
     "test": "semistandard && npm run coverage",
     "coverage": "node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test/**/*.js --report lcov -- -R spec",
-    "lint": "semistandard"
+    "lint": "semistandard",
+    "clean": "rm -rf dist/ && mkdir -p dist/",
+    "build": "npm run clean && uglifyjs index.js -o dist/url-parser.min.js -cm"
   },
   "repository": {
     "type": "git",
@@ -19,12 +21,12 @@
     "url": "https://github.com/numo-labs/spies-url-parser/issues"
   },
   "homepage": "https://github.com/numo-labs/spies-url-parser",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "istanbul": "^0.4.3",
     "mocha": "^2.4.5",
-    "semistandard": "^7.0.5"
+    "semistandard": "^7.0.5",
+    "uglify-js": "^2.7.0"
   },
   "semistandard": {
     "globals": [
